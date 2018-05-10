@@ -37,7 +37,7 @@ namespace MegaDesk_3_Zac_Bell
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

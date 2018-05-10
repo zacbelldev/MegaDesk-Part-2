@@ -28,5 +28,35 @@ namespace MegaDesk_3_Zac_Bell
             mainMenu.Show();
             Close();
         }
+
+        private void widthInput_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void depthInput_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calcQuoteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawersInput_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void surfaceMaterialInput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rushInput_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
