@@ -16,5 +16,17 @@ namespace MegaDesk_3_Zac_Bell
         {
             InitializeComponent();
         }
+
+        private void custNameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            Close();
+        }
     }
 }
