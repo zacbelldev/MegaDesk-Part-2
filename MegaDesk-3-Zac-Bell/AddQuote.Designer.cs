@@ -84,7 +84,7 @@
             // 
             // widthInput
             // 
-            this.widthInput.Location = new System.Drawing.Point(178, 41);
+            this.widthInput.Location = new System.Drawing.Point(235, 41);
             this.widthInput.Maximum = new decimal(new int[] {
             96,
             0,
@@ -96,7 +96,7 @@
             0,
             0});
             this.widthInput.Name = "widthInput";
-            this.widthInput.Size = new System.Drawing.Size(198, 26);
+            this.widthInput.Size = new System.Drawing.Size(141, 26);
             this.widthInput.TabIndex = 5;
             this.widthInput.Value = new decimal(new int[] {
             24,
@@ -107,7 +107,7 @@
             // 
             // depthInput
             // 
-            this.depthInput.Location = new System.Drawing.Point(178, 73);
+            this.depthInput.Location = new System.Drawing.Point(235, 73);
             this.depthInput.Maximum = new decimal(new int[] {
             48,
             0,
@@ -119,7 +119,7 @@
             0,
             0});
             this.depthInput.Name = "depthInput";
-            this.depthInput.Size = new System.Drawing.Size(198, 26);
+            this.depthInput.Size = new System.Drawing.Size(141, 26);
             this.depthInput.TabIndex = 6;
             this.depthInput.Value = new decimal(new int[] {
             12,
@@ -134,9 +134,9 @@
             this.depthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.depthLabel.Location = new System.Drawing.Point(12, 74);
             this.depthLabel.Name = "depthLabel";
-            this.depthLabel.Size = new System.Drawing.Size(70, 25);
+            this.depthLabel.Size = new System.Drawing.Size(202, 25);
             this.depthLabel.TabIndex = 7;
-            this.depthLabel.Text = "Depth:";
+            this.depthLabel.Text = "Depth (12-48 inches):";
             // 
             // widthLabel
             // 
@@ -144,9 +144,9 @@
             this.widthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.widthLabel.Location = new System.Drawing.Point(12, 42);
             this.widthLabel.Name = "widthLabel";
-            this.widthLabel.Size = new System.Drawing.Size(69, 25);
+            this.widthLabel.Size = new System.Drawing.Size(201, 25);
             this.widthLabel.TabIndex = 8;
-            this.widthLabel.Text = "Width:";
+            this.widthLabel.Text = "Width (24-96 inches):";
             // 
             // calcQuoteButton
             // 
@@ -166,20 +166,20 @@
             this.drawersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drawersLabel.Location = new System.Drawing.Point(12, 108);
             this.drawersLabel.Name = "drawersLabel";
-            this.drawersLabel.Size = new System.Drawing.Size(90, 25);
+            this.drawersLabel.Size = new System.Drawing.Size(138, 25);
             this.drawersLabel.TabIndex = 11;
-            this.drawersLabel.Text = "Drawers:";
+            this.drawersLabel.Text = "Drawers (0-7):";
             // 
             // drawersInput
             // 
-            this.drawersInput.Location = new System.Drawing.Point(178, 107);
+            this.drawersInput.Location = new System.Drawing.Point(235, 107);
             this.drawersInput.Maximum = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.drawersInput.Name = "drawersInput";
-            this.drawersInput.Size = new System.Drawing.Size(198, 26);
+            this.drawersInput.Size = new System.Drawing.Size(141, 26);
             this.drawersInput.TabIndex = 10;
             this.drawersInput.ValueChanged += new System.EventHandler(this.drawersInput_ValueChanged);
             // 
@@ -197,7 +197,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(78, 25);
+            this.radioButton2.Location = new System.Drawing.Point(80, 25);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(43, 24);
             this.radioButton2.TabIndex = 13;
@@ -225,9 +225,9 @@
             "rosewood",
             "veneer",
             "pine"});
-            this.surfaceMaterialInput.Location = new System.Drawing.Point(178, 140);
+            this.surfaceMaterialInput.Location = new System.Drawing.Point(235, 140);
             this.surfaceMaterialInput.Name = "surfaceMaterialInput";
-            this.surfaceMaterialInput.Size = new System.Drawing.Size(198, 28);
+            this.surfaceMaterialInput.Size = new System.Drawing.Size(141, 28);
             this.surfaceMaterialInput.TabIndex = 15;
             this.surfaceMaterialInput.SelectedIndexChanged += new System.EventHandler(this.surfaceMaterialInput_SelectedIndexChanged);
             // 
@@ -247,9 +247,9 @@
             this.surfaceMaterialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surfaceMaterialLabel.Location = new System.Drawing.Point(12, 143);
             this.surfaceMaterialLabel.Name = "surfaceMaterialLabel";
-            this.surfaceMaterialLabel.Size = new System.Drawing.Size(87, 25);
+            this.surfaceMaterialLabel.Size = new System.Drawing.Size(185, 25);
             this.surfaceMaterialLabel.TabIndex = 17;
-            this.surfaceMaterialLabel.Text = "Material:";
+            this.surfaceMaterialLabel.Text = "Material (5 options):";
             // 
             // rushInput
             // 
