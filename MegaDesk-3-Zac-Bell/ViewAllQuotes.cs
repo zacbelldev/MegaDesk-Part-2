@@ -16,5 +16,10 @@ namespace MegaDesk_3_Zac_Bell
         {
             InitializeComponent();
         }
+
+        private void ViewAllQuotes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

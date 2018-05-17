@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,11 +36,41 @@ namespace MegaDesk_3_Zac_Bell
         //drawersInput
         //surfaceMaterialInput
         //rushInput
-        //outputQuoteText
+        //outputQuoteText        
 
-        private void custNameInput_TextChanged(object sender, EventArgs e)
+        private void calcQuoteButton_Click(object sender, EventArgs e)
         {
-
+            DeskQuote quote = new DeskQuote();
+            quote.Width = Convert.ToInt32(widthInput.Value);
+            quote.Depth = Convert.ToInt32(depthInput.Value);
+            quote.NumOfDrawers = Convert.ToInt32(drawersInput.Value);
+            string surface = surfaceMaterialInput.SelectedValue.ToString();
+            string rush = rushInput.SelectedValue.ToString();
+            quote.CustName = custNameInput.Text;
+            quote.QuoteDate = DateTime.Now;
+            decimal finalQuote = 0.00M;
+            try
+            {
+                //Calculate Final Quote
+                finalQuote = quote.CalcTotalCost(quote.Width, quote.Depth, quote.NumOfDrawers, rush, surface);
+                //Output text to form
+                outputQuoteText.Text = finalQuote.ToString();
+                // Output quote to file            
+                string str = $"{quote.CustName},{quote.QuoteDate},{surface},{rush},{quote.Width},{quote.Depth},{quote.NumOfDrawers},{finalQuote}";
+                if (!File.Exists("quotes.txt")) {
+                    File.WriteAllText("quotes.txt", str);
+                } else {
+                    using (var tw = new StreamWriter("quotes.txt", true))
+                    {
+                        tw.WriteLine(str);
+                    }
+                }                
+            }
+            catch (Exception ex)
+            {
+                outputQuoteText.Text = ex.ToString();
+                throw ex;
+            }                        
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -47,6 +78,33 @@ namespace MegaDesk_3_Zac_Bell
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
             Close();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void custNameInput_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void widthInput_ValueChanged(object sender, EventArgs e)
@@ -59,19 +117,6 @@ namespace MegaDesk_3_Zac_Bell
 
         }
 
-        private void calcQuoteButton_Click(object sender, EventArgs e)
-        {
-            //Desk desk = new Desk();
-            //desk.Width = int.Parse(widthInput.Value);
-            //desk.Depth = int.Parse(depthInput.Value);
-            //desk.NumOfDrawers = int.Parse(drawersInput.Value);
-            //desk.Surface = surfaceMaterialInput.ValueMember;
-            //DeskQuote quote = new DeskQuote();
-            //quote.RushDays = 
-            //finalQuote = quote.CalcTotalCost(desk.Width, desk.Depth, desk.NumOfDrawers, quote.RushDays, desk.Surface);
-            //outputQuoteText.Text = finalQuote;
-        }
-
         private void drawersInput_ValueChanged(object sender, EventArgs e)
         {
 
@@ -79,7 +124,7 @@ namespace MegaDesk_3_Zac_Bell
 
         private void surfaceMaterialInput_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rushInput_Enter(object sender, EventArgs e)
@@ -89,13 +134,14 @@ namespace MegaDesk_3_Zac_Bell
 
         private void rushInput_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void outputQuoteText_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }
 

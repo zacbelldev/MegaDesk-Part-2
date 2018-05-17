@@ -52,9 +52,9 @@
             // 
             // custNameInput
             // 
-            this.custNameInput.Location = new System.Drawing.Point(178, 8);
+            this.custNameInput.Location = new System.Drawing.Point(202, 8);
             this.custNameInput.Name = "custNameInput";
-            this.custNameInput.Size = new System.Drawing.Size(198, 26);
+            this.custNameInput.Size = new System.Drawing.Size(174, 26);
             this.custNameInput.TabIndex = 0;
             this.custNameInput.TextChanged += new System.EventHandler(this.custNameInput_TextChanged);
             // 
@@ -235,9 +235,9 @@
             this.outputQuoteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputQuoteText.Location = new System.Drawing.Point(90, 218);
             this.outputQuoteText.Name = "outputQuoteText";
-            this.outputQuoteText.Size = new System.Drawing.Size(22, 25);
+            this.outputQuoteText.Size = new System.Drawing.Size(27, 25);
             this.outputQuoteText.TabIndex = 20;
-            this.outputQuoteText.Text = "s";
+            this.outputQuoteText.Text = "   ";
             this.outputQuoteText.Click += new System.EventHandler(this.outputQuoteText_Click);
             // 
             // AddQuote
