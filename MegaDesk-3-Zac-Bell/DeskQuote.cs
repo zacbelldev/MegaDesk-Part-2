@@ -21,14 +21,9 @@ namespace MegaDesk_3_Zac_Bell
             Standard
         }
 
-        //public double CalcSurfacePrice(int Width, int Depth)
-        //{
-            
-        //}
-
         public double CalcTotalCost(int Width, int Depth, int NumOfDrawers, string RushDays, string SurfaceMaterial)
         {
-            //CalcSurfacePrice
+            //Calc Surface Price
             double basePrice = 200.00;
             int size = Width * Depth;
             double potentialLargeSurfaceCost = 0.00;
@@ -37,13 +32,8 @@ namespace MegaDesk_3_Zac_Bell
                 potentialLargeSurfaceCost = size;
             }
             double surfacePrice = basePrice + potentialLargeSurfaceCost;
-            //return surfacePrice;
-            // CalcSurfacePrice
 
-
-             
-
-            //int size = Width * Depth;
+            // Calc Line Cost
             double materialCost = 0.00;
             switch (SurfaceMaterial)
             {
@@ -65,12 +55,8 @@ namespace MegaDesk_3_Zac_Bell
             }
             double drawerCost = NumOfDrawers * 50.00;
             double lineCost = drawerCost + materialCost;
-            //return lineCost;
 
-
-
-            //CalcRushCost
-            //int size = Width * Depth;
+            //Calc Rush Cost
             double rushCost = 0.00;
             switch (RushDays)
             {
@@ -120,27 +106,10 @@ namespace MegaDesk_3_Zac_Bell
                     rushCost = 0.00;
                     break;
             }
-            //return rushCost;
-            //CalcRushCost
-
-
+            
+            //Add it all up together
             double totalCost = surfacePrice + lineCost + rushCost;
             return totalCost;
         }
-
-        //public double CalcRushCost(string RushDays, int Width, int Depth)
-        //{
-
-        //}
-
-        //public CalcTotalQuoteCost(decimal BasePrice, decimal LineItemCost, int RushDays)
-        //{
-        //    surfPrice = CalcSurfacePrice();
-        //    lineCost = CalcLineItemCost();
-        //    rushCost = CalcRushCost();
-        //    totalCost = BasePrice + surfPrice + lineCost + RushCost;
-        //    return totalCost;
-        //    return decimal;
-        //}
     }
 }
