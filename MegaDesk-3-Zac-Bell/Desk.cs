@@ -11,7 +11,7 @@ namespace MegaDesk_3_Zac_Bell
         public int Width {get; set;}
         public int Depth { get; set; }
         public int NumOfDrawers { get; set; }
-        enum SurfaceMaterial
+        public enum SurfaceMaterial
         {
             Oak,
             Laminate,

@@ -6,46 +6,141 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_3_Zac_Bell
 {
-    class DeskQuote
+    class DeskQuote: Desk
     {
-        //Desk: Desk { get; set; }
-        public int RushDays { get; set; }
+        
         public string CustName { get; set; }
-        public date QuoteDate { get; set; }
+        public DateTime QuoteDate { get; set; }
         public decimal BasePrice { get; set; }
-        public int SurfaceSize { get; set; }
-
-        public CalcSurfacePrice(int Width, int Depth)
+        public int SurfaceCost { get; set; }
+        enum RushDays
         {
-             //-> take in width, depth & calc surface price
-            Width = Desk.Width;
-            Depth = Desk.Depth;
-            decimal test = 12.34;
-            return test;
+            ThreeDays,
+            FiveDays,
+            SevenDays,
+            Standard
         }
 
-        public CalcLineItemCost(int Width, int Depth, int NumOfDrawers, enum Surface)
-        {
-            //-> take in width, depth, etc & calc item cost
-            decimal test = 12.34;
-            return test;
-        }
+        //public double CalcSurfacePrice(int Width, int Depth)
+        //{
+            
+        //}
 
-        public CalcRushCost(int RushDays, int SurfaceSize)
+        public double CalcTotalCost(int Width, int Depth, int NumOfDrawers, string RushDays, string SurfaceMaterial)
         {
-             //-> take in rush days and surface size to calc shipping
-            decimal test = 12.34;
-            return test;
-        }
+            //CalcSurfacePrice
+            double basePrice = 200.00;
+            int size = Width * Depth;
+            double potentialLargeSurfaceCost = 0.00;
+            if (size > 1000)
+            {
+                potentialLargeSurfaceCost = size;
+            }
+            double surfacePrice = basePrice + potentialLargeSurfaceCost;
+            //return surfacePrice;
+            // CalcSurfacePrice
 
-        public CalcTotalQuoteCost(decimal BasePrice, decimal LineItemCost, int RushDays)
-        {
-            surfPrice = CalcSurfacePrice();
-            lineCost = CalcLineItemCost();
-            rushCost = CalcRushCost();
-            totalCost = BasePrice + surfPrice + lineCost + RushCost;
+
+             
+
+            //int size = Width * Depth;
+            double materialCost = 0.00;
+            switch (SurfaceMaterial)
+            {
+                case "Oak":
+                    materialCost = 200.00;
+                    break;
+                case "Laminate":
+                    materialCost = 100.00;
+                    break;
+                case "Pine":
+                    materialCost = 50.00;
+                    break;
+                case "Rosewood":
+                    materialCost = 300.00;
+                    break;
+                case "Veneer":
+                    materialCost = 125.00;
+                    break;
+            }
+            double drawerCost = NumOfDrawers * 50.00;
+            double lineCost = drawerCost + materialCost;
+            //return lineCost;
+
+
+
+            //CalcRushCost
+            //int size = Width * Depth;
+            double rushCost = 0.00;
+            switch (RushDays)
+            {
+                case "ThreeDays":
+                    if (size < 1000)
+                    {
+                        rushCost = 60.00;
+                    }
+                    if (size < 2000)
+                    {
+                        rushCost = 70.00;
+                    }
+                    else
+                    {
+                        rushCost = 80.00;
+                    }
+                    break;
+                case "FiveDays":
+                    if (size < 1000)
+                    {
+                        rushCost = 40.00;
+                    }
+                    if (size < 2000)
+                    {
+                        rushCost = 50.00;
+                    }
+                    else
+                    {
+                        rushCost = 60.00;
+                    }
+                    break;
+                case "SevenDays":
+                    if (size < 1000)
+                    {
+                        rushCost = 30.00;
+                    }
+                    if (size < 2000)
+                    {
+                        rushCost = 35.00;
+                    }
+                    else
+                    {
+                        rushCost = 40.00;
+                    }
+                    break;
+                case "Standard":
+                    rushCost = 0.00;
+                    break;
+            }
+            //return rushCost;
+            //CalcRushCost
+
+
+            double totalCost = surfacePrice + lineCost + rushCost;
             return totalCost;
-            return decimal;
         }
+
+        //public double CalcRushCost(string RushDays, int Width, int Depth)
+        //{
+
+        //}
+
+        //public CalcTotalQuoteCost(decimal BasePrice, decimal LineItemCost, int RushDays)
+        //{
+        //    surfPrice = CalcSurfacePrice();
+        //    lineCost = CalcLineItemCost();
+        //    rushCost = CalcRushCost();
+        //    totalCost = BasePrice + surfPrice + lineCost + RushCost;
+        //    return totalCost;
+        //    return decimal;
+        //}
     }
 }
