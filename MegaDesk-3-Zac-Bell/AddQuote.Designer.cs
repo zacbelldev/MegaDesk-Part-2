@@ -39,17 +39,15 @@
             this.calcQuoteButton = new System.Windows.Forms.Button();
             this.drawersLabel = new System.Windows.Forms.Label();
             this.drawersInput = new System.Windows.Forms.NumericUpDown();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.surfaceMaterialInput = new System.Windows.Forms.ComboBox();
             this.rushOrderLabel = new System.Windows.Forms.Label();
             this.surfaceMaterialLabel = new System.Windows.Forms.Label();
-            this.rushInput = new System.Windows.Forms.GroupBox();
+            this.rushInput = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.outputQuoteText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.widthInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawersInput)).BeginInit();
-            this.rushInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // custNameInput
@@ -183,48 +181,9 @@
             this.drawersInput.TabIndex = 10;
             this.drawersInput.ValueChanged += new System.EventHandler(this.drawersInput_ValueChanged);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 25);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(43, 24);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "3";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(80, 25);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 24);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "5";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(151, 25);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(43, 24);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "7";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // surfaceMaterialInput
             // 
             this.surfaceMaterialInput.FormattingEnabled = true;
-            this.surfaceMaterialInput.Items.AddRange(new object[] {
-            "laminate",
-            "oak",
-            "rosewood",
-            "veneer",
-            "pine"});
             this.surfaceMaterialInput.Location = new System.Drawing.Point(235, 140);
             this.surfaceMaterialInput.Name = "surfaceMaterialInput";
             this.surfaceMaterialInput.Size = new System.Drawing.Size(141, 28);
@@ -253,22 +212,41 @@
             // 
             // rushInput
             // 
-            this.rushInput.Controls.Add(this.radioButton1);
-            this.rushInput.Controls.Add(this.radioButton2);
-            this.rushInput.Controls.Add(this.radioButton3);
-            this.rushInput.Location = new System.Drawing.Point(178, 174);
+            this.rushInput.FormattingEnabled = true;
+            this.rushInput.Location = new System.Drawing.Point(235, 175);
             this.rushInput.Name = "rushInput";
-            this.rushInput.Size = new System.Drawing.Size(200, 69);
+            this.rushInput.Size = new System.Drawing.Size(141, 28);
             this.rushInput.TabIndex = 18;
-            this.rushInput.TabStop = false;
-            this.rushInput.Text = "(days)";
-            this.rushInput.Enter += new System.EventHandler(this.rushInput_Enter);
+            this.rushInput.SelectedIndexChanged += new System.EventHandler(this.rushInput_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Quote:";
+            // 
+            // outputQuoteText
+            // 
+            this.outputQuoteText.AutoSize = true;
+            this.outputQuoteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputQuoteText.Location = new System.Drawing.Point(90, 218);
+            this.outputQuoteText.Name = "outputQuoteText";
+            this.outputQuoteText.Size = new System.Drawing.Size(22, 25);
+            this.outputQuoteText.TabIndex = 20;
+            this.outputQuoteText.Text = "s";
+            this.outputQuoteText.Click += new System.EventHandler(this.outputQuoteText_Click);
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 257);
+            this.Controls.Add(this.outputQuoteText);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rushInput);
             this.Controls.Add(this.surfaceMaterialLabel);
             this.Controls.Add(this.rushOrderLabel);
@@ -291,8 +269,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.widthInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawersInput)).EndInit();
-            this.rushInput.ResumeLayout(false);
-            this.rushInput.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,12 +286,11 @@
         private System.Windows.Forms.Button calcQuoteButton;
         private System.Windows.Forms.Label drawersLabel;
         private System.Windows.Forms.NumericUpDown drawersInput;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.ComboBox surfaceMaterialInput;
         private System.Windows.Forms.Label rushOrderLabel;
         private System.Windows.Forms.Label surfaceMaterialLabel;
-        private System.Windows.Forms.GroupBox rushInput;
+        private System.Windows.Forms.ComboBox rushInput;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label outputQuoteText;
     }
 }

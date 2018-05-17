@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 namespace MegaDesk_3_Zac_Bell
 {
     class DeskQuote: Desk
-    {
-        
+    {   
         public string CustName { get; set; }
         public DateTime QuoteDate { get; set; }
         public decimal BasePrice { get; set; }
         public int SurfaceCost { get; set; }
-        enum RushDays
+        public enum RushDays
         {
             ThreeDays,
             FiveDays,
@@ -21,7 +20,7 @@ namespace MegaDesk_3_Zac_Bell
             Standard
         }
 
-        public double CalcTotalCost(int Width, int Depth, int NumOfDrawers, string RushDays, string SurfaceMaterial)
+        public double CalcTotalCost(int Width, int Depth, int NumOfDrawers, string RushDays, string Surface)
         {
             //Calc Surface Price
             double basePrice = 200.00;
@@ -29,13 +28,13 @@ namespace MegaDesk_3_Zac_Bell
             double potentialLargeSurfaceCost = 0.00;
             if (size > 1000)
             {
-                potentialLargeSurfaceCost = size;
+                potentialLargeSurfaceCost = (size - 1000.00);
             }
             double surfacePrice = basePrice + potentialLargeSurfaceCost;
 
             // Calc Line Cost
             double materialCost = 0.00;
-            switch (SurfaceMaterial)
+            switch (Surface)
             {
                 case "Oak":
                     materialCost = 200.00;
