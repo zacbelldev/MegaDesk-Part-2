@@ -22,8 +22,6 @@ namespace MegaDesk_3_Zac_Bell
         {
             string searchTerm = custNameSearchTextBox.Text;
 
-            dataGridView1.Dock = DockStyle.Fill;
-
             //Read the data from text file
             string[] quoteData = File.ReadAllLines("quotes.txt");
             string[] headerData = new[] { "Customer Name, Date, Surface, Rush, Width, Depth, Drawers, Quote" };
@@ -37,7 +35,8 @@ namespace MegaDesk_3_Zac_Bell
 
             foreach (string quote in quoteData)
             {
-                if (quote == searchTerm)
+                string[] str = quote.Split(',');
+                if (str[0].Contains(searchTerm))
                     table.Rows.Add(quote.Split(','));
             }
                 

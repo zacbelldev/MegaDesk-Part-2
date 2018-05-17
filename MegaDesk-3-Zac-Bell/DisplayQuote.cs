@@ -16,9 +16,7 @@ namespace MegaDesk_3_Zac_Bell
         public DisplayQuote()
         {
             InitializeComponent();
-
-            displayQuotesGridView.Dock = DockStyle.Fill;
-
+          
             //Read the data from text file
             string[] quoteData = File.ReadAllLines("quotes.txt");
             string[] headerData = new[] { "Customer Name, Date, Surface, Rush, Width, Depth, Drawers, Quote" };

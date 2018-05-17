@@ -54,7 +54,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1160, 349);
+            this.dataGridView1.Size = new System.Drawing.Size(1160, 292);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -68,7 +68,7 @@
             // 
             // custNameSearchButton
             // 
-            this.custNameSearchButton.Location = new System.Drawing.Point(450, 12);
+            this.custNameSearchButton.Location = new System.Drawing.Point(428, 12);
             this.custNameSearchButton.Name = "custNameSearchButton";
             this.custNameSearchButton.Size = new System.Drawing.Size(317, 48);
             this.custNameSearchButton.TabIndex = 3;
@@ -80,13 +80,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1184, 398);
             this.Controls.Add(this.custNameSearchButton);
             this.Controls.Add(this.custNameSearchTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.exitButton);
             this.Name = "SearchQuotes";
-            this.Text = "SearchQuotes";
+            this.Text = "Search Quotes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
