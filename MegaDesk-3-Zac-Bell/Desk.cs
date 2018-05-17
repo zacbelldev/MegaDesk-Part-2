@@ -8,5 +8,16 @@ namespace MegaDesk_3_Zac_Bell
 {
     class Desk
     {
+        public int Width {get; set;}
+        public int Depth { get; set; }
+        public int NumOfDrawers { get; set; }
+        enum SurfaceMaterial
+        {
+            Oak,
+            Laminate,
+            Pine,
+            Rosewood,
+            Veneer
+        }
     }
 }

@@ -27,12 +27,18 @@ namespace MegaDesk_3_Zac_Bell
 
         private void viewQuotesButton_Click(object sender, EventArgs e)
         {
-
+            DisplayQuote addNewQuoteForm = new DisplayQuote();
+            addNewQuoteForm.Tag = this;
+            addNewQuoteForm.Show(this);
+            Hide();
         }
 
         private void searchQuotesButton_Click(object sender, EventArgs e)
         {
-
+            SearchQuotes addNewQuoteForm = new SearchQuotes();
+            addNewQuoteForm.Tag = this;
+            addNewQuoteForm.Show(this);
+            Hide();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
